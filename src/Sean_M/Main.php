@@ -57,11 +57,12 @@ class Main extends PluginBase implements Listener{
         if($cause instanceof EntityDamageByEntityEvent){
                 if($e instanceof Living){
                         $p->sendPopup("You were slain by {$e->getName()}!");
-                        else{
-                          $p->sendPopup("An unknown force has slain you!");
-                        }
 		}
 	}
-	break;		
+	break;	
+	
+    default:
+    	$p->sendPopup("An unknown force has slain you!");
+    	break;
   }
   if(isset($text)) $p->sendPopup($text);
